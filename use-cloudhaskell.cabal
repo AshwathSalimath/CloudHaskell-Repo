@@ -1,0 +1,45 @@
+name:                use-cloudhaskell
+version:             0.1.0.0
+synopsis:            Initial project template from stack
+description:         Please see README.md
+homepage:            https://github.com/esjmb/use-cloudhaskell#readme
+license:             BSD3
+license-file:        LICENSE
+author:              Stephen Barrett
+maintainer:          Stephen.Barrett@tcd.ie
+copyright:           2016
+category:            test
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     Lib
+                     , PrimeFactors
+  build-depends:       base >= 4.7 && < 5                     
+                     , network-transport-tcp
+                     , distributed-process
+                     , distributed-process-simplelocalnet
+  default-language:    Haskell2010
+
+executable use-cloudhaskell-exe
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , use-cloudhaskell
+  default-language:    Haskell2010
+
+test-suite use-cloudhaskell-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:       base
+                     , use-cloudhaskell
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/esjmb/use-cloudhaskell
