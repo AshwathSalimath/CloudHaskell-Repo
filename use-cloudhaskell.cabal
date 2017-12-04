@@ -21,6 +21,7 @@ library
                      , network-transport-tcp
                      , distributed-process
                      , distributed-process-simplelocalnet
+                     , argon
   default-language:    Haskell2010
 
 executable use-cloudhaskell-exe
